@@ -12,7 +12,7 @@ https://github.com/SGCMarkus/android_kernel_lge_msm8998/tree/twrp-7.1
 ## How to compile
 
 ```sh
-export export ALLOW_MISSING_DEPENDENCIES=true
+export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 lunch omni_joan-eng
 make -j# recoveryimage
