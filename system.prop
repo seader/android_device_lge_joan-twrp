@@ -1,4 +1,4 @@
-ro.sf.lcd_density=560
+ro.sf.lcd_density=480
 ro.lge.lcd_default_brightness=158
 sys.usb.controller=a800000.dwc3
 ro.hardware.keystore=msm8998
