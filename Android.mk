@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-ifneq ($(filter joan h930 us998 v30,$(TARGET_DEVICE)),)
+ifneq ($(filter joan,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
