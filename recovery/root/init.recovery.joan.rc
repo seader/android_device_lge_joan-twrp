@@ -37,10 +37,6 @@ service vold /sbin/vold \
 on defaultcrypto
     exec - root -- /sbin/vdc --wait cryptfs mountdefaultencrypted
 
-# One shot invocation to encrypt unencrypted volumes
-on encrypt
-    exec - root -- /sbin/vdc --wait cryptfs enablecrypto inplace default noui
-
 # LGE ADDED
 on decrypt
     exec - root -- /sbin/vdc --wait cryptfs disablecrypto inplace default
