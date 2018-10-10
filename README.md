@@ -3,7 +3,7 @@ Tree for building TWRP for LGE V30 (Joan)
 
 ## TWRP device tree for Joan (LG V30)
 
-https://github.com/SGCMarkus/android_device_lge_joan-twrp/tree/android-8.1
+https://github.com/seader/android_device_lge_joan-twrp/tree/android-8.1
 
 ## Kernel Sources
 
@@ -15,7 +15,7 @@ https://github.com/SGCMarkus/android_kernel_lge_msm8998/tree/twrp-7.1
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 lunch omni_joan-eng
-make -j# recoveryimage
+make -j# recoveryimage (where # = number of possible threads of your cpu + 1)
 ```
 
 ## Device specifications
