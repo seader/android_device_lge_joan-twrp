@@ -1,5 +1,5 @@
 DEVICE_TREE := device/lge/joan
-#WITHOUT_CHECK_API := true
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
@@ -13,6 +13,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno540
 #TARGET_GLOBAL_CFLAGS +=
 #TARGET_GLOBAL_CPPFLAGS +=
 #COMMON_GLOBAL_CFLAGS +=
+#WITHOUT_CHECK_API := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -57,11 +58,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# Copy this damn lib...
-#PRODUCT_COPY_FILES += \
-#   device/lge/joan/recovery/prebuilt/libcryptfs_hw.so:recovery/root/system/lib64/libcryptfs_hw.so \
-#    device/lge/joan/recovery/prebuilt/libcryptfs_hw.so:recovery/root/lib64/libcryptfs_hw.so
-
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true 
@@ -73,7 +69,7 @@ TW_MAX_BRIGHTNESS := 249
 TW_DEFAULT_BRIGHTNESS := 130
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_NTFS_3G := true
-TARGET_RECOVERY_DEVICE_MODULES := kdzwriter
+TARGET_RECOVERY_DEVICE_MODULES := kdzwriter strace
 #TARGET_RECOVERY_DEVICE_MODULES += tzdata
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/usr/share/zoneinfo/tzdata
 
@@ -92,7 +88,7 @@ TW_INCLUDE_CRYPTO := true
 #TARGET_HW_DISK_ENCRYPTION := true
 #TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
-#WITH_CRYPTO_UTILS := true
+WITH_CRYPTO_UTILS := true
 
 # Asian region languages
 TW_EXTRA_LANGUAGES := true

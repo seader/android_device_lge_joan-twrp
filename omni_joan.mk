@@ -21,5 +21,4 @@ PRODUCT_MANUFACTURER := LGE
 
 # Time&Date Fix
 PRODUCT_COPY_FILES += \
-	device/lge/joan/prebuilt/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata \
-	device/lge/joan/recovery.fstab:recovery/root/etc/twrp.flags
+	device/lge/joan/prebuilt/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata

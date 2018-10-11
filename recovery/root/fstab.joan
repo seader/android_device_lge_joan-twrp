@@ -11,4 +11,4 @@
 /dev/block/bootdevice/by-name/userdata	/data		ext4	discard,nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue	wait,check,encryptable=/dev/block/bootdevice/by-name/encrypt
 /devices/soc/c0a4900.sdhci/mmc_host*	auto		auto	nosuid,nodev	wait,encryptable=/dev/block/bootdevice/by-name/encrypt
 /dev/block/bootdevice/by-name/misc		/misc		emmc	defaults	defaults
-/dev/block/bootdevice/by-name/drm		/persist-lg	ext4	seclabel,nosuid,nodev,noatime,noauto_da_alloc,errors=continue	defaults
+#/dev/block/bootdevice/by-name/drm		/persist-lg	ext4	seclabel,nosuid,nodev,noatime,noauto_da_alloc,errors=continue	defaults

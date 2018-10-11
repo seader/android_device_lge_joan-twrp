@@ -13,10 +13,10 @@
 /vendor			ext4	/dev/block/bootdevice/by-name/vendor		flags=backup=1;wipeingui;removable
 /vendor_image	emmc	/dev/block/bootdevice/by-name/vendor
 /modem			emmc	/dev/block/bootdevice/by-name/modem			flags=display="Modem";flashimg
-/firmware		vfat	/dev/block/bootdevice/by-name/modem			flags=mounttodecrypt;backup=1;display="Firmware";fsflags=context=u:object_r:firmware_file:s0
-/persist-lg		ext4	/dev/block/bootdevice/by-name/drm 			flags=mounttodecrypt;display="Persist-LG"
-/persist		ext4	/dev/block/bootdevice/by-name/persist		flags=display="Persist"
+/firmware		vfat	/dev/block/bootdevice/by-name/modem			flags=mounttodecrypt;backup=1;display="Firmware / Modem";fsflags=context=u:object_r:firmware_file:s0
+/persist-lg		ext4	/dev/block/bootdevice/by-name/drm 			flags=mounttodecrypt;display="Persist-LG";backup=1
+/persist		ext4	/dev/block/bootdevice/by-name/persist		flags=display="Persist";backup=1
 /external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0		flags=display="mSDcard";storage;wipeingui;removable;encryptable=/dev/block/bootdevice/by-name/encrypt
 /usb-otg		vfat	/dev/block/sdh1 /dev/block/sdh				flags=display="USB-OTG";storage;wipeingui;removable
-/OP				ext4	/dev/block/bootdevice/by-name/OP			flags=display="OP Configs"
+/OP				ext4	/dev/block/bootdevice/by-name/OP			flags=display="OP Configs";backup=1
 /laf			emmc	/dev/block/bootdevice/by-name/laf			flags=backup=1;display="LAF / DL";flashimg

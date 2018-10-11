@@ -1,6 +1,8 @@
 # android_device_lge_joan
 Tree for building TWRP for LGE V30 (Joan)
 
+There's a patch named "twrp_bootable_recovery_timefix.patch" in this directory, use this on bootable/recovery folder to apply the timefix.
+
 ## TWRP device tree for Joan (LG V30)
 
 https://github.com/seader/android_device_lge_joan-twrp/tree/android-8.1
