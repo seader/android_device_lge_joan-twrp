@@ -37,6 +37,15 @@ service vold /sbin/vold \
     disabled
     oneshot
 
+service keymaster-3-0 /vendor/bin/hw/android.hardware.keymaster@3.0-service
+    class early_hal
+    user system
+    group system drmrpc
+    disabled
+    oneshot
+    setenv PATH /sbin
+    seclabel u:r:vold:s0
+
 #Disable for now, but maybe this is helpful when it comes to stock decryption... if it comes...
 #on defaultcrypto
 #    exec - root -- /sbin/vdc --wait cryptfs mountdefaultencrypted
