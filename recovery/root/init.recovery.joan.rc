@@ -23,28 +23,10 @@ on boot
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1555200
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1555200
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1555200
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1555200
-
-
-service vold /sbin/vold \
-        --blkid_context=u:r:blkid:s0 --blkid_untrusted_context=u:r:blkid_untrusted:s0 \
-        --fsck_context=u:r:fsck:s0 --fsck_untrusted_context=u:r:fsck_untrusted:s0
-    socket vold stream 0660 root mount
-    socket cryptd stream 0660 root mount
-    disabled
-    oneshot
-
-service keymaster-3-0 /vendor/bin/hw/android.hardware.keymaster@3.0-service
-    class early_hal
-    user system
-    group system drmrpc
-    disabled
-    oneshot
-    setenv PATH /sbin
-    seclabel u:r:vold:s0
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 595200
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 595200
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 595200
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 595200
 
 #Disable for now, but maybe this is helpful when it comes to stock decryption... if it comes...
 #on defaultcrypto
