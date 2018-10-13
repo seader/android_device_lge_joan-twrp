@@ -70,8 +70,6 @@ TW_DEFAULT_BRIGHTNESS := 130
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_NTFS_3G := true
 TARGET_RECOVERY_DEVICE_MODULES := kdzwriter strace
-#TARGET_RECOVERY_DEVICE_MODULES += tzdata
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/usr/share/zoneinfo/tzdata
 
 # We can use the factory reset button combo to enter recovery safely
 TW_IGNORE_MISC_WIPE_DATA := true
@@ -80,10 +78,6 @@ TW_IGNORE_MISC_WIPE_DATA := true
 TW_NO_EXFAT_FUSE := true
 
 # Encryption support
-#TARGET_INCLUDE_KEYMASTER_PARTITION_CHECK := true
-#TW_INCLUDE_FBE := true
-#TW_INCLUDE_CRYPTO_FBE := true
-#TARGET_USE_UFS_ICE := true
 TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
