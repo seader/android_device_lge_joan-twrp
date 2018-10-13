@@ -1,8 +1,4 @@
 on init
-    mkdir /firmware 0771 system system
-    mkdir /persist-lg 0771 system system
-    mkdir /persist-lg/encryption 0771 system system
-    mkdir /persist-lg/kmstore 0770 system system
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
@@ -11,11 +7,7 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    wait /dev/block/bootdevice/by-name/drm
-    mount -o nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue /dev/block/bootdevice/by-name/drm /persist-lg
-    wait /dev/block/bootdevice/by-name/modem
-    mount -o ro /dev/block/bootdevice/by-name/modem /firmware
-    symlink /firmware/image /vendor/firmware
+#    symlink /firmware/image /vendor/firmware
 
 service qseecom /sbin/qseecomd
 	disabled
@@ -34,8 +26,8 @@ on boot
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
 
 # LGE ADDED
-on decrypt
-    exec - root -- /sbin/vdc --wait cryptfs disablecrypto inplace default
+#on decrypt
+#    exec - root -- /sbin/vdc --wait cryptfs disablecrypto inplace default
 
 on post-fs
     chown system system /persist-lg
@@ -43,4 +35,4 @@ on post-fs
 
 #on post-fs-data
     setprop vold.post_fs_data_done 1
-
+#    setprop hwservicemanager.ready true

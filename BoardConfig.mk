@@ -86,8 +86,8 @@ TW_NO_EXFAT_FUSE := true
 #TARGET_USE_UFS_ICE := true
 TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd hwservicemanager keymaster-3-0
 WITH_CRYPTO_UTILS := true
 
 # Asian region languages
