@@ -1,12 +1,21 @@
-on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-
 on init
+    mkdir /firmware 0771 system system
+    mkdir /persist-lg 0771 system system
+    mkdir /persist-lg/encryption 0771 system system
+    mkdir /persist-lg/kmstore 0770 system system
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    wait /dev/block/bootdevice/by-name/drm
+    mount ext4 /dev/block/bootdevice/by-name/drm /persist-lg nosuid nodev barrier=1 noatime noauto_da_alloc errors=continue
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
+    symlink /firmware/image /vendor/firmware
 
 service qseecom /sbin/qseecomd
 	disabled
@@ -28,11 +37,14 @@ on boot
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 595200
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 595200
 
-#Disable for now, but maybe this is helpful when it comes to stock decryption... if it comes...
-#on defaultcrypto
-#    exec - root -- /sbin/vdc --wait cryptfs mountdefaultencrypted
-
 # LGE ADDED
-#on decrypt
-#    exec - root -- /sbin/vdc --wait cryptfs disablecrypto inplace default
+on decrypt
+    exec - root -- /sbin/vdc --wait cryptfs disablecrypto inplace default
+
+on post-fs
+    chown system system /persist-lg
+    chmod 0771 /persist-lg
+
+#on post-fs-data
+    setprop vold.post_fs_data_done 1
 
