@@ -1,14 +1,17 @@
 # android_device_lge_joan
 Tree for building TWRP for LGE V30 (Joan)
 
-There's a patch named "twrp_bootable_recovery_timefix.patch" in this directory, use this on bootable/recovery folder to apply the timefix.
+There are some patches in device_tree/bootable/recovry. For stock and AOSP data decryption "add_keymaster.patch & enable_fde.patch" are needed, for fixing time it's "twrp_bootable_recovery_timefix.patch". Apply them on bootable/recovery folder for applying.
+Also there's a local_manifest you can use for an easy start.
+
+If someone likes cherrypicks more than patches, here are the links to keymaster 3 & 4 and enable fde commits:
+https://gerrit.omnirom.org/c/android_bootable_recovery/+/32610
+https://gerrit.omnirom.org/c/android_bootable_recovery/+/32645
 
 ## TWRP device tree for Joan (LG V30)
-
 https://github.com/seader/android_device_lge_joan-twrp/tree/android-8.1
 
 ## Kernel Sources
-
 https://github.com/SGCMarkus/android_kernel_lge_msm8998/tree/twrp-7.1
 
 ## How to compile
