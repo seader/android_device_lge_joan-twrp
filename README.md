@@ -1,8 +1,9 @@
 # android_device_lge_joan
 Tree for building TWRP for LGE V30 (Joan)
 
-There are some patches in device_tree/bootable/recovry. For stock and AOSP data decryption "add_keymaster.patch & enable_fde.patch" are needed, for fixing time it's "twrp_bootable_recovery_timefix.patch". Apply them on bootable/recovery folder for applying.
-Also there's a local_manifest you can use for an easy start.
+There are some patches in device_tree/bootable/recovery. For stock and AOSP data decryption "add_keymaster.patch" & "enable_fde.patch" are needed, for fixing time it's "twrp_bootable_recovery_timefix.patch". I leave this file here, even it was not needed as a similar timefix was applied by TWRP Team a month ago (use /persist/time/ats_2), the only missing thing was persist partition 0_o. Phoenix 591 pointed me to this, thx ;) So by using it you only have /data/vendor/time and the persist equivalent (this one actually on two places) in searching pathes.
+Just apply them on bootable/recovery folder.
+Also there's a local_manifest, maybe it helps for an easy start.
 
 If someone likes cherrypicks more than patches, here are the links to keymaster 3 & 4 and enable fde commits:
 https://gerrit.omnirom.org/c/android_bootable_recovery/+/32610
