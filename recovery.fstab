@@ -4,6 +4,7 @@
 /vendor			ext4	/dev/block/bootdevice/by-name/vendor	flags=backup=1;wipeingui;removable
 /vendor_image	emmc	/dev/block/bootdevice/by-name/vendor
 /data			ext4	/dev/block/bootdevice/by-name/userdata	flags=encryptable=/dev/block/bootdevice/by-name/encrypt
+/data_image		emmc	/dev/block/bootdevice/by-name/userdata	flags=backup=1;display="Data (incl. storage): use compression!";
 /firmware		vfat	/dev/block/bootdevice/by-name/modem		flags=mounttodecrypt;backup=1;display="Modem / FW";fsflags=context=u:object_r:firmware_file:s0
 /modem			emmc	/dev/block/bootdevice/by-name/modem		flags=display="Modem";flashimg
 /efs1			emmc	/dev/block/bootdevice/by-name/modemst1	flags=backup=1;display="EFS"
