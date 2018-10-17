@@ -1,7 +1,7 @@
 # android_device_lge_joan
-Tree for building TWRP for LGE V30 (Joan)
+Tree for building decryption enabled TWRP for LGE V30 (Joan)
 
-There are some patches in device_tree/bootable/recovery. For stock and AOSP data decryption "add_keymaster.patch" & "enable_fde.patch" are needed, for fixing time it's "twrp_bootable_recovery_timefix.patch". I leave this file here, even it was not needed as a similar timefix was applied by TWRP Team a month ago (use /persist/time/ats_2), the only missing thing was persist partition 0_o. Phoenix 591 pointed me to this, thx ;) So by using it you only have /data/vendor/time and the persist equivalent (this one actually on two places) in searching pathes.
+There are some patches in device_tree/bootable/recovery. For stock and AOSP data decryption "add_keymaster.patch" & "enable_fde.patch" are needed, and "twrp_bootable_recovery_timefix.patch". I leave this file here, even it was not needed as a similar timefix was applied by TWRP Team a month ago (use /persist/time/ats_2), the only missing thing was persist partition 0_o. Phoenix 591 pointed me to this, thx ;) So by using it you only have /data/vendor/time and the persist equivalent (this one actually on two places) in searching pathes.
 Just apply them on bootable/recovery folder.
 Also there's a local_manifest, maybe it helps for an easy start.
 
@@ -9,8 +9,10 @@ If someone likes cherrypicks more than patches, here are the links to keymaster 
 https://gerrit.omnirom.org/c/android_bootable_recovery/+/32610
 https://gerrit.omnirom.org/c/android_bootable_recovery/+/32645
 
+And if you're really lazy, you can use my bootable_recovery-twrp repo, of course :D There's a little more edits to it, check the commits.
+
 ## TWRP device tree for Joan (LG V30)
-https://github.com/seader/android_device_lge_joan-twrp/tree/android-8.1
+https://github.com/seader/android_device_lge_joan-twrp/tree/encrypt-8.1
 
 ## Kernel Sources
 https://github.com/SGCMarkus/android_kernel_lge_msm8998/tree/twrp-7.1
