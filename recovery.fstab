@@ -4,6 +4,7 @@
 /vendor			ext4	/dev/block/bootdevice/by-name/vendor	flags=backup=1;wipeingui;removable
 /vendor_image	emmc	/dev/block/bootdevice/by-name/vendor	flags=backup=0;flashimg
 /data			ext4	/dev/block/bootdevice/by-name/userdata	flags=encryptable=/dev/block/bootdevice/by-name/encrypt
+/recovery		emmc	/dev/block/bootdevice/by-name/recovery
 /firmware		vfat	/dev/block/bootdevice/by-name/modem		flags=mounttodecrypt;fsflags=context=u:object_r:firmware_file:s0
 /modem			emmc	/dev/block/bootdevice/by-name/modem		flags=display="Modem";flashimg;backup=1
 /efs1			emmc	/dev/block/bootdevice/by-name/modemst1	flags=backup=1;display="EFS"
