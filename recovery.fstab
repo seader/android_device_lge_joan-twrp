@@ -14,4 +14,4 @@
 /external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="mSDcard";storage;wipeingui;removable;encryptable=/dev/block/bootdevice/by-name/encrypt
 /usb-otg		vfat	/dev/block/sdh1 /dev/block/sdh			flags=display="USB-OTG";storage;wipeingui;removable
 /misc			emmc	/dev/block/bootdevice/by-name/misc
-/cache			ext4	/dev/block/bootdevice/by-name/cache
+/cache			ext4	/dev/block/bootdevice/by-name/cache		flags=backup=0
