@@ -1,4 +1,0 @@
-* text=auto
-# flagging files with version info can be useful
-*.py ident
-*.[ch] ident
