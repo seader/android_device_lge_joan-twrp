@@ -4,9 +4,9 @@
 /vendor			ext4	/dev/block/bootdevice/by-name/vendor	flags=backup=1;wipeingui;removable
 /vendor_image	emmc	/dev/block/bootdevice/by-name/vendor	flags=backup=0;flashimg
 /data			ext4	/dev/block/bootdevice/by-name/userdata	flags=encryptable=/dev/block/bootdevice/by-name/encrypt
-/data_image		emmc	/dev/block/bootdevice/by-name/userdata	flags=backup=1;display="Data incl. storage: BIG extSD needed!"
-/firmware		vfat	/dev/block/bootdevice/by-name/modem		flags=display="Modem";mounttodecrypt;fsflags=context=u:object_r:firmware_file:s0;backup=1
-/modem			emmc	/dev/block/bootdevice/by-name/modem		flags=flashimg
+#/data_image		emmc	/dev/block/bootdevice/by-name/userdata	flags=backup=1;display="Data incl. storage: BIG extSD needed!"
+/firmware		vfat	/dev/block/bootdevice/by-name/modem		flags=display="Firmware";mounttodecrypt;fsflags=context=u:object_r:firmware_file:s0;backup=1
+/modem			emmc	/dev/block/bootdevice/by-name/modem		flags=flashimg;display="Modem"
 /efs1			emmc	/dev/block/bootdevice/by-name/modemst1	flags=backup=1;display="EFS"
 /efs2			emmc	/dev/block/bootdevice/by-name/modemst2	flags=backup=1;subpartitionof=/efs1
 /efsg			emmc	/dev/block/bootdevice/by-name/fsg		flags=backup=1;subpartitionof=/efs1
