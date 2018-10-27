@@ -73,7 +73,7 @@ TW_MAX_BRIGHTNESS := 249
 TW_DEFAULT_BRIGHTNESS := 130
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_NTFS_3G := true
-TARGET_RECOVERY_DEVICE_MODULES := kdzwriter strace
+TARGET_RECOVERY_DEVICE_MODULES := libcryptfs_hw
 TW_CRYPTO_SYSTEM_VOLD_DEBUG := /system/xbin/strace
 
 # We can use the factory reset button combo to enter recovery safely
