@@ -67,7 +67,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_USE_QCOM_HAPTICS_VIBRATOR := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 TW_BRIGHTNESS_PATH := "/sys/devices/soc/c900000.qcom\x2cmdss_mdp/c900000.qcom\x2cmdss_mdp:qcom\x2cmdss_fb_primary/leds/lcd-backlight/brightness"
@@ -95,9 +94,9 @@ TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd hwservicemanager keymaster-3-0
 # Asian region languages
 TW_EXTRA_LANGUAGES := true
 
+# Debug flags
 #TWRP_INCLUDE_LOGCAT := true
 #TARGET_USES_LOGD := true
-TARGET_COPY_OUT_VENDOR := vendor
 TW_EXCLUDE_TWRPAPP := true
 TW_DEVICE_VERSION := 5-adv
 #TWRP_EVENT_LOGGING := true
