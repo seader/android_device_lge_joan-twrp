@@ -38,7 +38,7 @@ TARGET_KERNEL_SOURCE := kernel/lge/msm8998
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := lineageos_h930_defconfig
-KERNEL_TOOLCHAIN_PREFIX := /home/seadersn/bin/gcc-linaro-5.5.0-2017.10-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+KERNEL_TOOLCHAIN_PREFIX := /home/seadersn/bin/toolchains/bin/aarch64-linux-gnu-
 
 # Boot image
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048 androidboot.hardware=joan androidboot.selinux=permissive
@@ -98,6 +98,6 @@ TW_EXTRA_LANGUAGES := true
 #TWRP_INCLUDE_LOGCAT := true
 #TARGET_USES_LOGD := true
 TW_EXCLUDE_TWRPAPP := true
-TW_DEVICE_VERSION := 5-adv
+TW_DEVICE_VERSION := 6-IntSD
 #TWRP_EVENT_LOGGING := true
 #TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
