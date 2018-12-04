@@ -13,6 +13,7 @@
 /recovery		emmc	/dev/block/bootdevice/by-name/recovery	flags=backup=1
 /laf			emmc	/dev/block/bootdevice/by-name/laf		flags=backup=1;display="LAF / DL";flashimg
 /OP				ext4	/dev/block/bootdevice/by-name/OP		flags=backup=1;display="OP Configs";removable
+/OP_image		emmc	/dev/block/bootdevice/by-name/OP		flags=removable;display="OP image";flashimg
 /persist		ext4	/dev/block/bootdevice/by-name/persist	flags=backup=1;display="Persist"
 /persist-lg		ext4	/dev/block/bootdevice/by-name/drm		flags=backup=1;display="Persist-LG";mounttodecrypt
 /external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="mSDcard";storage;wipeingui;removable;encryptable=/dev/block/bootdevice/by-name/encrypt
