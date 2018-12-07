@@ -30,15 +30,15 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a73
 
 # Kernel
-#TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilt/Image.gz-dtb
 #TARGET_KERNEL_APPEND_DTB := true
 #BOARD_SEPOLICY_DIRS += device/lge/joan/sepolicy
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_SOURCE := kernel/lge/msm8998
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := lineageos_h930_defconfig
-KERNEL_TOOLCHAIN_PREFIX := /home/seadersn/bin/toolchains/bin/aarch64-linux-gnu-
+#TARGET_KERNEL_SOURCE := kernel/lge/msm8998
+#TARGET_KERNEL_ARCH := arm64
+#TARGET_KERNEL_HEADER_ARCH := arm64
+#TARGET_KERNEL_CONFIG := lineageos_h930_defconfig
+#KERNEL_TOOLCHAIN_PREFIX := /home/seadersn/bin/toolchains/bin/aarch64-linux-gnu-
 
 # Boot image
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048 androidboot.hardware=joan androidboot.selinux=permissive
